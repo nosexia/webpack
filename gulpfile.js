@@ -29,5 +29,5 @@ gulp.task('default', function() {
     /*.pipe(rename(function (path) {
         path.dirname = tmp[path.basename].dirname;
     }))*/
-    .pipe(gulp.dest('scripts-build/'));
+    //.pipe(gulp.dest('scripts-build/'));
 });
