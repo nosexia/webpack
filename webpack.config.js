@@ -1,18 +1,23 @@
+/*global module*/
+var webpack = require('webpack');
 module.exports = {
-    entry: './scripts/indexMain.js',
-    output: {
-        filename: './scripts-build/indexMain.js'
+    watch:true,
+    resolve: {
+        modulesDirectories: ['./scripts'],
+        alias:{
+            jquery:'lib/jquery',
+            underscore: 'lib/underscore',
+            backbone: 'lib/backbone',
+            'angular': 'lib/angular.min',
+            wx: 'lib/wx'            
+        },
+    },
+    module: {
+        loaders:[   
+            {   //匹配文件问angular\.min\.js文件，通过exports-loader加载器，把window.angular暴露到module.exports = angular
+                test: /angular\.min\.js$/, loader: 'exports-loader?angular'
+            }
+        ]
     }
-};
 
-//在当前文件夹下面，打包indexMain
-//配置entry参数，需要打包文件
-//配置output参数  输出打包文件
-//output: {
-//filename: './scripts-build/indexMain.js'
-//}
-//
-//
-//
-//
-//在当前文件夹下，执行webpack,执行webpack.config.js对文件打包
+};

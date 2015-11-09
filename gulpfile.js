@@ -24,10 +24,11 @@ gulp.task('default', function() {
         return moduleName;
     }))
 
-    //引入webpack.config.js
+    //把webpack做为node模块使用，调用webpack  (使用webpack的api模式)
+    //参数为需要的配置路径
     .pipe(webpack(require('./webpack.config.js')))
     /*.pipe(rename(function (path) {
         path.dirname = tmp[path.basename].dirname;
     }))*/
-    //.pipe(gulp.dest('scripts-build/'));
+    .pipe(gulp.dest('scripts-build/'));
 });
