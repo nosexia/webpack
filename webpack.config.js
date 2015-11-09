@@ -18,9 +18,6 @@ module.exports = {
                 test: /angular\.min\.js$/, loader: 'exports-loader?angular'
             }
         ]
-    },
-    externals:{
-        "jquery": "jQuery"
     }
 
 };

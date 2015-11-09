@@ -21,6 +21,7 @@
   "homepage": "https://github.com/nosexia/webpack",
   "dependencies": {
     "angular": "^1.4.7",
+    "cookie": "^0.2.3",
     "exports-loader": "^0.6.2",
     "vinyl-named": "^1.1.0",
     "webpack": "^1.12.2",

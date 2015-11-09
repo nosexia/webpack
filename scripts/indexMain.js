@@ -1,10 +1,9 @@
 define([
 ],function(){
-    //webpack打包，js文件引入node内置模块'url'
-    var url = require('url');
-    var urlResult = url.parse('http://webpack.toobug.net/zh-cn/index.html');
-    //url对应parse方法，解析urlResult字符串
-    console.log(url.parse(urlResult));
+    //引入NPM中jquery模块
+    var jquery = require('jquery');
+    //引入的版本是2.0.3
+    console.log(jquery.fn.jquery);
 });
 
 
