@@ -1,7 +1,7 @@
 /*global module*/
 var webpack = require('webpack');
 module.exports = {
-    watch:false,
+    watch:true,
     resolve: {
         modulesDirectories: ['./scripts'],
         alias:{

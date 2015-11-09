@@ -1,6 +1,6 @@
 define([
 ],function(){
-    return {
+    module.exports = {
         name: 'nose'
-    };   
+    };
 });
