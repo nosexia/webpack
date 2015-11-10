@@ -1,7 +1,5 @@
 require([
-    'jquery',
-    'underscore'
-],function($, _){
+    'jquery'
+],function($){
     console.log($);
-    console.log(_);
 }); 
