@@ -73,7 +73,7 @@
 /******/ 			script.charset = 'utf-8';
 /******/ 			script.async = true;
 
-/******/ 			script.src = __webpack_require__.p + "" + chunkId + ".indexMain.js";
+/******/ 			script.src = __webpack_require__.p + "" + chunkId + "." + ({}[chunkId]||chunkId) + ".js";
 /******/ 			head.appendChild(script);
 /******/ 		}
 /******/ 	};
@@ -96,11 +96,9 @@
 /***/ function(module, exports, __webpack_require__) {
 
 	__webpack_require__.e/* require */(1, function(__webpack_require__) { var __WEBPACK_AMD_REQUIRE_ARRAY__ = [
-	    __webpack_require__(1),
-	    __webpack_require__(3)
-	]; (function($, _){
+	    __webpack_require__(1)
+	]; (function($){
 	    console.log($);
-	    console.log(_);
 	}.apply(null, __WEBPACK_AMD_REQUIRE_ARRAY__));}); 
 
 /***/ }
