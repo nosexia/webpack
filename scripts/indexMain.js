@@ -1,5 +1,5 @@
 require([
-    'jquery'
-],function($){
-    console.log($);
+    'wx'
+],function(wx){
+    console.log(wx);
 }); 

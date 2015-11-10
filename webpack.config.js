@@ -15,7 +15,7 @@ module.exports = {
         filename: '[name].js'        
     },
     externals: {
-        'jquery': 'jQuery'
+        'wx': 'wx'
     }
 };
 
