@@ -9,13 +9,16 @@ var devConfig = {
     output : {
         filename : '[name].js'
     },
+    /*
     module : {
         loaders : [
             {test : /\.html$/, loader : 'text'}
         ]
     },
-    devtool: '#source-map'
+   /* devtool: '#source-map'*/
 };
+
+devConfig = require('./webpack.config.js');
 
 
 gulp.task('dev', function(){
@@ -26,4 +29,4 @@ gulp.task('dev', function(){
 });
 
 // 当'./scripts/test.js'变化时，执行dev
-gulp.watch(['./scripts/test.js'],['dev']);
+//gulp.watch(['./scripts/test.js'],['dev']);
