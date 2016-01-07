@@ -1,22 +1,19 @@
 /*global module*/
-
 module.exports = {
     watch:false,
     resolve: {
-        modulesDirectories: ['./scripts'],
+        modulesDirectories: ['./scripts'],      //alias的入口文件
         alias:{
             underscore: 'lib/underscore'
         }
     },
-    entry:['indexMain'],
-    output: {
-        path: 'scripts-build/',             
+    output: {           
         publicPath: 'scripts-build/',
         filename: '[name].js'        
     },
-    externals: {
+/*    externals: {
         'wx': 'wx'
-    }
+    }*/
 };
 
 //externals参数，indexMain.js中jquery依赖指向jQuery全局变量

@@ -19,17 +19,11 @@
     "url": "https://github.com/nosexia/webpack/issues"
   },
   "homepage": "https://github.com/nosexia/webpack",
-  "dependencies": {
-    "angular": "^1.4.7",
-    "cookie": "^0.2.3",
-    "exports-loader": "^0.6.2",
-    "vinyl-named": "^1.1.0",
-    "webpack": "^1.12.2",
-    "webpack-stream": "^2.1.1"
-  },
   "devDependencies": {
-    "jquery": "^2.1.4",
-    "script-loader": "^0.6.1",
-    "scriptjs": "^2.5.8"
+    "business-oa-common": "git+http://gitlab.futunn.com/webpackage/business-oa-common.git#1.1.0",
+    "tool-declare": "git+http://gitlab.futunn.com/webpackage/tool-declare.git#1.0.0"
+  },
+  "dependencies": {
+    "gulp": "^3.9.0"
   }
 }

@@ -1,34 +1,29 @@
 var gulp = require('gulp');
-var webpack = require('webpack-stream');
 var named = require('vinyl-named');
-
-/*var Head = document.getElementsByTagName('head')[0];
-var wxScript = document.createElement('scripts');
-wxScript.src = 'http://res.wx.qq.com/open/js/jweixin-1.0.0.js';
-Head.appendChild(wxScript);*/
-
-gulp.task('default', function() {
-
-    var tmp = {};
+// 引入webpack模块
+var webpack = require('webpack-stream');
 
 
-    return gulp.src(['./scripts/*Main.js'],{
-        base:'./scripts/'
-    })
-    .pipe(named(function(file){
-        //获取文件名
-        var path = require('path');
-        var moduleName = path.relative(path.join(file.cwd,file.base),file.history[0]);
-        moduleName = moduleName.replace(/.js$/,'');
-        console.log(moduleName);
-        return moduleName;
-    }))
+// 暂时不懂
+var devConfig = {
+    output : {
+        filename : '[name].js'
+    },
+    module : {
+        loaders : [
+            {test : /\.html$/, loader : 'text'}
+        ]
+    },
+    devtool: '#source-map'
+};
 
-    //把webpack做为node模块使用，调用webpack  (使用webpack的api模式)
-    //参数为需要的配置路径
-    .pipe(webpack(require('./webpack.config.js')))
-    /*.pipe(rename(function (path) {
-        path.dirname = tmp[path.basename].dirname;
-    }))*/
-    .pipe(gulp.dest('scripts-build/'));
+
+gulp.task('dev', function(){
+    return gulp.src('./scripts/test.js')
+    .pipe(named())          
+    .pipe(webpack(devConfig))
+    .pipe(gulp.dest('./scripts-build'));
 });
+
+// 当'./scripts/test.js'变化时，执行dev
+gulp.watch(['./scripts/test.js'],['dev']);
