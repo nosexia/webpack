@@ -14,4 +14,12 @@ gulp.task('dev', function(){
 });
 
 // 当'./scripts/test.js'变化时，执行dev
-//gulp.watch(['./scripts/test.js'],['dev']);
+gulp.task('watch', function(){
+    return gulp.watch('./scripts/test.js', ['dev']);
+});
+
+
+
+gulp.task('default', ['dev', 'watch']);
+
+

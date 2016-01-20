@@ -1,41 +1,41 @@
 /******/ (function(modules) { // webpackBootstrap
 /******/ 	// The module cache
 /******/ 	var installedModules = {};
-
+/******/
 /******/ 	// The require function
 /******/ 	function __webpack_require__(moduleId) {
-
+/******/
 /******/ 		// Check if module is in cache
 /******/ 		if(installedModules[moduleId])
 /******/ 			return installedModules[moduleId].exports;
-
+/******/
 /******/ 		// Create a new module (and put it into the cache)
 /******/ 		var module = installedModules[moduleId] = {
 /******/ 			exports: {},
 /******/ 			id: moduleId,
 /******/ 			loaded: false
 /******/ 		};
-
+/******/
 /******/ 		// Execute the module function
 /******/ 		modules[moduleId].call(module.exports, module, module.exports, __webpack_require__);
-
+/******/
 /******/ 		// Flag the module as loaded
 /******/ 		module.loaded = true;
-
+/******/
 /******/ 		// Return the exports of the module
 /******/ 		return module.exports;
 /******/ 	}
-
-
+/******/
+/******/
 /******/ 	// expose the modules object (__webpack_modules__)
 /******/ 	__webpack_require__.m = modules;
-
+/******/
 /******/ 	// expose the module cache
 /******/ 	__webpack_require__.c = installedModules;
-
+/******/
 /******/ 	// __webpack_public_path__
 /******/ 	__webpack_require__.p = "";
-
+/******/
 /******/ 	// Load entry module and return exports
 /******/ 	return __webpack_require__(0);
 /******/ })
@@ -55,6 +55,7 @@
 	var toolDeclare = __webpack_require__(2);
 	console.log(toolDeclare);
 	console.log('2222');
+	console.log('111');
 
 /***/ },
 /* 2 */
@@ -85,17 +86,17 @@
 	        return _ROOT.__webpackage_declare;
 	    }
 	    var op = Object.prototype, opts = op.toString, xtor = new Function, counter = 0, cname='constructor';
-
+	
 	    var _extraNames = "hasOwnProperty.valueOf.isPrototypeOf.propertyIsEnumerable.toLocaleString.toString.constructor".split(".");
 	    var _extraLen = _extraNames.length;
-
+	
 	    function err(msg, cls){ throw new Error("declare" + (cls ? " " + cls : "") + ": " + msg); }
-
+	
 	// C3 Method Resolution Order (see http://www.python.org/download/releases/2.3/mro/)
 	    function c3mro(bases, className){
 	        var result = [], roots = [{cls: 0, refs: []}], nameMap = {}, clsCount = 1,
 	            l = bases.length, i = 0, j, lin, base, top, proto, rec, name, refs;
-
+	
 	        // build a list of bases naming them if needed
 	        for(; i < l; ++i){
 	            base = bases[i];
@@ -127,7 +128,7 @@
 	            ++top.count;
 	            roots[0].refs.push(top);
 	        }
-
+	
 	        // remove classes without external references recursively
 	        while(roots.length){
 	            top = roots.pop();
@@ -157,16 +158,16 @@
 	        if(clsCount){
 	            err("can't build consistent linearization", className);
 	        }
-
+	
 	        // calculate the superclass offset
 	        base = bases[0];
 	        result[0] = base ?
 	            base._meta && base === result[result.length - base._meta.bases.length] ?
 	                base._meta.bases.length : 1 : 0;
-
+	
 	        return result;
 	    }
-
+	
 	    function declare(className, superclass, props) {
 	        if (typeof className != "string") {
 	            props = superclass;
@@ -174,9 +175,9 @@
 	            className = "";
 	        }
 	        props = props || [];
-
+	
 	        var proto, i, t, ctor, name, bases, chains, mixins = 1, parents = superclass;
-
+	
 	        if(opts.call(superclass) == "[object Array]"){
 	            bases = c3mro(superclass, className);
 	            t = bases[0];
@@ -195,7 +196,7 @@
 	                err("unknown base class. Did you use require to pull it in?", className);
 	            }
 	        }
-
+	
 	        if (superclass) {
 	            for (i = mixins - 1;; --i) {
 	                proto = forceNew(superclass);
@@ -214,15 +215,15 @@
 	        } else {
 	            proto = {};
 	        }
-
+	
 	        safeMixin(proto, props);
-
+	
 	        t = props.constructor;
 	        if (t !== op.constructor) {
 	            t.nom = cname;
 	            proto.constructor = t;
 	        }
-
+	
 	        for (i = mixins - 1; i; --i) {
 	            t = bases[i]._meta;
 	            if(t && t.chains){
@@ -232,12 +233,12 @@
 	        if(proto["-chains-"]){
 	            chains = mixin(chains || {}, proto["-chains-"]);
 	        }
-
+	
 	        t = !chains || !chains.hasOwnProperty(cname);
 	        bases[0] = ctor = (chains && chains.constructor === "manual") ? simpleConstructor(bases) :
 	            (bases.length == 1 ? singleConstructor(props.constructor, t) : chainedConstructor(bases, t));
 	//        bases[0] = ctor = bases.length == 1 ? singleConstructor(props.constructor, true) : chainedConstructor(bases, true);
-
+	
 	        ctor._meta = {
 	            bases : bases,
 	            hidden : props,
@@ -249,13 +250,13 @@
 	        ctor.extend = extend;
 	        ctor.prototype = proto;
 	        proto.constructor = ctor;
-
+	
 	        proto.inherited = inherited;
-
+	
 	        if (className) {
 	            proto.delcaredClass = className;
 	        }
-
+	
 	        if(chains){
 	            for(name in chains){
 	                if(proto[name] && typeof chains[name] == "string" && name != cname){
@@ -266,7 +267,7 @@
 	        }
 	        return ctor;
 	    }
-
+	
 	// forceNew(ctor)
 	// return a new object that inherits from ctor.prototype but
 	// without actually running ctor on the object.
@@ -278,7 +279,7 @@
 	        xtor.prototype = null;	// clean up
 	        return t;
 	    }
-
+	
 	// applyNew(args)
 	// just like 'new ctor()' except that the constructor and its arguments come
 	// from args, which must be an array or an arguments object
@@ -290,15 +291,15 @@
 	        ctor.apply(t, args);
 	        return t;
 	    }
-
+	
 	    function singleConstructor(ctor, ctorSpecial){
 	        return function() {
 	            var a = arguments, t = a, a0 = a[0], f;
-
+	
 	            if (!(this instanceof a.callee)) {
 	                return applyNew(a);
 	            }
-
+	
 	            if(ctorSpecial){
 	                // full blown ritual
 	                if(a0){
@@ -319,28 +320,28 @@
 	                    // (see ticket #9795)
 	                }
 	            }
-
+	
 	            if (ctor) {
 	                ctor.apply(this, a);
 	            }
-
+	
 	            f = this.postscript;
 	            if(f){
 	                f.apply(this, a);
 	            }
 	        };
 	    }
-
+	
 	    function chainedConstructor(bases, ctorSpecial){
 	        return function(){
 	            var a = arguments, args = a, a0 = a[0], f, i, m,
 	                l = bases.length, preArgs;
-
+	
 	            if(!(this instanceof a.callee)){
 	                // not called via new, so force it
 	                return applyNew(a);
 	            }
-
+	
 	            //this._inherited = {};
 	            // perform the shaman's rituals of the original declare()
 	            // 1) call two types of the preamble
@@ -391,16 +392,16 @@
 	            }
 	        };
 	    }
-
+	
 	    function simpleConstructor(bases){
 	        return function(){
 	            var a = arguments, i = 0, f, m;
-
+	
 	            if(!(this instanceof a.callee)){
 	                // not called via new, so force it
 	                return applyNew(a);
 	            }
-
+	
 	            //this._inherited = {};
 	            // perform the shaman's rituals of the original declare()
 	            // 1) do not call the preamble
@@ -420,7 +421,7 @@
 	            }
 	        };
 	    }
-
+	
 	    function safeMixin(target, source) {
 	        var name, t;
 	        // add props adding metadata for incoming functions skipping a constructor
@@ -449,7 +450,7 @@
 	        }
 	        return target;
 	    }
-
+	
 	    function mixin(target, sources) {
 	        target = target || {};
 	        for (var i = 1, l = arguments.length; i < l; ++i) {
@@ -457,7 +458,7 @@
 	        }
 	        return target;
 	    }
-
+	
 	    function _mixin(dest, source) {
 	        var name, s, i, empty = {};
 	        for(name in source){
@@ -469,7 +470,7 @@
 	                dest[name] = s;
 	            }
 	        }
-
+	
 	        if(hasBugForInSkip()){
 	            if(source){
 	                for(i = 0; i < _extraLen; ++i){
@@ -481,10 +482,10 @@
 	                }
 	            }
 	        }
-
+	
 	        return dest; // Object
 	    }
-
+	
 	    function mixOwn(target, source) {
 	        // add props adding metadata for incoming functions skipping a constructor
 	        for(var name in source){
@@ -501,19 +502,19 @@
 	            }
 	        }
 	    }
-
+	
 	    function extend(source){
 	        declare.safeMixin(this.prototype, source);
 	        return this;
 	    }
-
+	
 	    function hasBugForInSkip() {
 	        for (var i in {toString : 1}) {
 	            return 0;
 	        }
 	        return 1;
 	    }
-
+	
 	    function chain(name, bases, reversed){
 	        return function(){
 	            var b, m, f, i = 0, step = 1;
@@ -530,11 +531,11 @@
 	            }
 	        };
 	    }
-
+	
 	    function inherited(args, a, f){
 	        var name, chains, bases, caller, meta, base, proto, opf, pos,
 	            cache = this._inherited = this._inherited || {};
-
+	
 	        // crack arguments
 	        if(typeof args == "string"){
 	            name = args;
@@ -542,16 +543,16 @@
 	            a = f;
 	        }
 	        f = 0;
-
+	
 	        caller = args.callee;
 	        name = name || caller.nom;
 	        if(!name){
 	            err("can't deduce a name to call inherited()", this.declaredClass);
 	        }
-
+	
 	        meta = this.constructor._meta;
 	        bases = meta.bases;
-
+	
 	        pos = cache.p;
 	        if(name != cname){
 	            // method
@@ -627,18 +628,18 @@
 	            }
 	            f = base && f;
 	        }
-
+	
 	        // cache the found super method
 	        cache.c = f;
 	        cache.p = pos;
-
+	
 	        // now we have the result
 	        if(f){
 	            return a === true ? f : f.apply(this, a || args);
 	        }
 	        // intentionally no return if a super method was not found
 	    }
-
+	
 	    declare.safeMixin = safeMixin;
 	    declare.mixin = mixin;
 	    _ROOT.__webpackage_declare = declare;
@@ -648,3 +649,4 @@
 
 /***/ }
 /******/ ]);
+//# sourceMappingURL=test.js.map

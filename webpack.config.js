@@ -1,21 +1,11 @@
 /*global module*/
 module.exports = {
-/*    resolve: {
-        modulesDirectories: ['./scripts'],      
-        alias:{
-            underscore: 'lib/underscore'
-        }
-    },*/
-    /*output: {           
-        publicPath: 'scripts-build/',
-        filename: '[name].js'        
-    },*/
-/*    externals: {
-        'wx': 'wx'
-    }*/
+
     output: {
         filename: '[name].js'
-    }
+    },
+    devtool: 'source-map'
 };
 
-//externals参数，indexMain.js中jquery依赖指向jQuery全局变量
+
+// 增加调试工具devtool 'source-map'
