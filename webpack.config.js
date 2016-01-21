@@ -1,6 +1,6 @@
 /*global module*/
 module.exports = {
-
+    watch: true,
     output: {
         filename: '[name].js'
     },

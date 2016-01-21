@@ -21,7 +21,9 @@
   "homepage": "https://github.com/nosexia/webpack",
   "devDependencies": {
     "business-oa-common": "git+http://gitlab.futunn.com/webpackage/business-oa-common.git#1.1.0",
-    "tool-declare": "git+http://gitlab.futunn.com/webpackage/tool-declare.git#1.0.0"
+    "gulp-plumber": "^1.0.1",
+    "tool-declare": "git+http://gitlab.futunn.com/webpackage/tool-declare.git#1.0.0",
+    "webpack-stream": "^3.0.1"
   },
   "dependencies": {
     "gulp": "^3.9.0"

@@ -5,11 +5,15 @@ var webpack = require('webpack-stream');
 
 var devConfig = require('./webpack.config.js');
 
+// 阻止gulp中断，当出现错误的时候
+var plumber = require('gulp-plumber');
+
 
 gulp.task('dev', function(){
     return gulp.src('./scripts/test.js')
-    .pipe(named())          
-    .pipe(webpack(devConfig))
+    .pipe(named())  
+    .pipe(plumber())        
+    .pipe(webpack(devConfig))    
     .pipe(gulp.dest('./scripts-build'));
 });
 
@@ -19,7 +23,8 @@ gulp.task('watch', function(){
 });
 
 
+gulp.task('default', ['dev']);
 
-gulp.task('default', ['dev', 'watch']);
 
 
+// webpack(devConfig)而引起了
