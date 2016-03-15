@@ -52,17 +52,11 @@
 /***/ function(module, exports, __webpack_require__) {
 
 	var a = 1;
-	var dialog = __webpack_require__(2);
+	var jquery = __webpack_require__(2);
 	
-	var dix = __webpack_require__(3);
+	var _ = __webpack_require__(3);
 	
-	rtsertscvva = {xxxx};xxxxxxxxx
-	
-	var a = 2;xxxx111xxx
-	// 涉及到对象就会报错，停止监听
-	var a = {
-	    xxx:1
-	};
+	console.log(jquery);
 
 /***/ },
 /* 2 */
