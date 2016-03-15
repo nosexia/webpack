@@ -2,10 +2,18 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>js压缩工具( new webpack.optimize.UglifyJsPlugin )</title>
+    <title>给入style-loader， css-loader加载器</title>
     <script src="./scripts-build/test.js"></script>
 </head>
 <body>
+配置文件(有坑):</br>
+所有的加载器是在module对象中</br>
+module:{
+    loaders: {
+        test: /\.css$/,
+        loader: 'style!css'
+    }
+}
 
     
 </body>

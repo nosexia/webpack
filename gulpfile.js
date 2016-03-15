@@ -33,6 +33,14 @@ gulp.task('prod', function(){
     .pipe(gulp.dest('./scripts-build'));    
 });
 
+
+/*gulp.task('prod', function(){
+    return gulp.src('./css/common.css')
+    .pipe(named())
+    .pipe(webpackStream(pordConfig))
+    .pipe(gulp.dest('./css-build'));    
+});*/
+
 // 当'./scripts/test.js'变化时，执行dev
 gulp.task('watch', function(){
     return gulp.watch('./scripts/test.js', ['dev']);
