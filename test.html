@@ -2,18 +2,11 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>给入style-loader， css-loader加载器</title>
+    <title>'支持@import url(css url)'</title>
     <script src="./scripts-build/test.js"></script>
 </head>
 <body>
-配置文件(有坑):</br>
-所有的加载器是在module对象中</br>
-module:{
-    loaders: {
-        test: /\.css$/,
-        loader: 'style!css'
-    }
-}
+把一个css文件引入到另外一个css文件中。
 
     
 </body>
