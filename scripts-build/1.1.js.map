@@ -1,0 +1,1 @@
+{"version":3,"sources":["webpack:///external \"wx\""],"names":[],"mappings":";;;;;AAAA,qB","file":"1.1.js","sourcesContent":["module.exports = wx;\n\n\n/*****************\n ** WEBPACK FOOTER\n ** external \"wx\"\n ** module id = 2\n ** module chunks = 1\n **/"],"sourceRoot":""}

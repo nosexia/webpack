@@ -21,7 +21,7 @@ var plumber = require('gulp-plumber');
 
 
 gulp.task('dev', function(){
-    return gulp.src('./scripts/test.js')
+    return gulp.src('./scripts/indexMain.js')
     .pipe(named())  
     .pipe(plumber())        
     .pipe(webpackStream(devConfig))    

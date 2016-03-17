@@ -2,7 +2,8 @@
 module.exports = {
     watch: true,
     output: {
-        filename: '[name].js'
+        filename: '[name].js',
+        publicPath: './scripts-build/'
     },
     devtool: 'source-map',
     module: {
@@ -12,6 +13,9 @@ module.exports = {
                 loader: 'style!css'
             }
         ] 
+    },
+    externals:{
+        wx: 'wx'
     }
     
 };
