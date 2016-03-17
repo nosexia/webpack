@@ -6,7 +6,8 @@ var webpack = require('webpack');
 var extend = require('extend');
 var runSequence = require('run-sequence');
 var devConfig = require('./webpack.config.js');
-
+var uglifycss = require('gulp-uglifycss');
+var cssimport = require('gulp-cssimport');
 var pordConfig = extend({}, devConfig, {
     watch: false,
     plugins: [new webpack.optimize.UglifyJsPlugin]
@@ -31,6 +32,12 @@ gulp.task('prod', function(){
     .pipe(named())
     .pipe(webpackStream(pordConfig))
     .pipe(gulp.dest('./scripts-build'));    
+});
+
+gulp.task('prod-css', function(){
+    return gulp.src('./css/common.css')
+    .pipe(cssimport())
+    .pipe(gulp.dest('./css-build'));
 });
 
 

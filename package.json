@@ -19,13 +19,14 @@
     "url": "https://github.com/nosexia/webpack/issues"
   },
   "homepage": "https://github.com/nosexia/webpack",
-  "devDependencies": {    
+  "devDependencies": {
     "css-loader": "^0.23.1",
     "extend": "^3.0.0",
+    "gulp-cssimport": "^3.0.2",
     "gulp-plumber": "^1.0.1",
+    "gulp-uglifycss": "^1.0.6",
     "run-sequence": "^1.1.5",
     "style-loader": "^0.13.0",
-    
     "webpack-stream": "^3.0.1"
   },
   "dependencies": {
