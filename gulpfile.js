@@ -6,7 +6,9 @@ var webpack = require('webpack');
 var extend = require('extend');
 var runSequence = require('run-sequence');
 var devConfig = require('./webpack.config.js');
+// uglifycss 压缩css
 var uglifycss = require('gulp-uglifycss');
+// 用cssimport，引入css文件。
 var cssimport = require('gulp-cssimport');
 var pordConfig = extend({}, devConfig, {
     watch: false,
@@ -37,6 +39,7 @@ gulp.task('prod', function(){
 gulp.task('prod-css', function(){
     return gulp.src('./css/common.css')
     .pipe(cssimport())
+    .pipe(uglifycss())
     .pipe(gulp.dest('./css-build'));
 });
 
