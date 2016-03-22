@@ -5,6 +5,9 @@ module.exports = {
         filename: '[name].js',
         publicPath: './scripts-build/'
     },
+    alias: {
+        jquery: './scripts/lib/jquery'
+    },
     devtool: 'source-map',
     module: {
        loaders:[

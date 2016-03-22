@@ -104,8 +104,9 @@
 
 	__webpack_require__.e/* require */(1, function(__webpack_require__) { var __WEBPACK_AMD_REQUIRE_ARRAY__ = [
 	    __webpack_require__(2)
-	]; (function(wx){
-	    console.log(wx);
+	]; (function($){
+	    // 这里很奇怪
+	    console.log(window.$);
 	}.apply(null, __WEBPACK_AMD_REQUIRE_ARRAY__));}); 
 
 /***/ }
