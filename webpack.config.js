@@ -5,9 +5,12 @@ module.exports = {
         filename: '[name].js',
         publicPath: './scripts-build/'
     },
-    alias: {
-        jquery: './scripts/lib/jquery'
+    resolve: {
+        alias: {
+            'jquery': './lib/jquery-1.9.1.min.js'
+        }
     },
+    
     devtool: 'source-map',
     module: {
        loaders:[

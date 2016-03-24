@@ -21,7 +21,7 @@ var plumber = require('gulp-plumber');
 
 
 gulp.task('dev', function(){
-    return gulp.src('./scripts/**/*Main.js')
+    return gulp.src('./scripts/**/indexMain.js')
     .pipe(named())  
     .pipe(plumber())        
     .pipe(webpackStream(devConfig))    
@@ -52,9 +52,6 @@ gulp.task('prod-css', function(){
 });*/
 
 // 当'./scripts/test.js'变化时，执行dev
-gulp.task('watch', function(){
-    return gulp.watch('./scripts/test.js', ['dev']);
-});
 
 gulp.task('default', ['dev']);
 
