@@ -1,20 +1,21 @@
 <html>
 <head>
-    <title>webpack什么时候会生成*chuck.js文件</title>
+    <title>module.exports.output参数</title>
     <meta charset="utf-8"/>  
 <script src="./scripts-build/indexMain.js"></script>    
 </head>
 <body>
 
-1.require(['module-a', 'module-b'], function(a, b){
-    // 会生成*chunk.js文件
-})
-
-2.define(['moudle-a', 'module-b'], function(a, b){
-    // 不会生成*chunk.js文件
-})
+// 定义chunkFilename的值，由[id].[chunkhash]组成
 
 </body>
+<script type="text/javascript">
+    module.exports = {
+        output : {
+            chunkFilename : '[id].[chunkhash].js'
+        }
+    };
+</script>
 </html>
 
 

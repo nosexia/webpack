@@ -1,8 +1,7 @@
 /*global module*/
 module.exports = {
-    watch: true,
     output: {
-        filename: '[name].js',
+        chunkFilename : '[id].[chunkhash].js',
         publicPath: './scripts-build/'
     },
     resolve: {

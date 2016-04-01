@@ -27,7 +27,7 @@
 /******/ 	// "0" means "already loaded"
 /******/ 	// Array means "loading", array contains callbacks
 /******/ 	var installedChunks = {
-/******/ 		2:0
+/******/ 		5:0
 /******/ 	};
 /******/
 /******/ 	// The require function
@@ -73,7 +73,7 @@
 /******/ 			script.charset = 'utf-8';
 /******/ 			script.async = true;
 /******/
-/******/ 			script.src = __webpack_require__.p + "" + chunkId + "." + {"3":"52ca5c872cb4f2c339a9"}[chunkId] + ".js";
+/******/ 			script.src = __webpack_require__.p + "" + chunkId + "." + {"6":"08108dd59c1783ac15a4"}[chunkId] + ".js";
 /******/ 			head.appendChild(script);
 /******/ 		}
 /******/ 	};
@@ -91,28 +91,27 @@
 /******/ 	return __webpack_require__(0);
 /******/ })
 /************************************************************************/
-/******/ ([
-/* 0 */
+/******/ ({
+
+/***/ 0:
 /***/ function(module, exports, __webpack_require__) {
 
-	module.exports = __webpack_require__(4);
+	module.exports = __webpack_require__(8);
 
 
 /***/ },
-/* 1 */,
-/* 2 */,
-/* 3 */,
-/* 4 */
+
+/***/ 8:
 /***/ function(module, exports, __webpack_require__) {
 
-	__webpack_require__.e/* require */(3, function(__webpack_require__) { var __WEBPACK_AMD_REQUIRE_ARRAY__ = [
-	    __webpack_require__(5)
-	]; (function($){
+	__webpack_require__.e/* require */(6, function(__webpack_require__) { var __WEBPACK_AMD_REQUIRE_ARRAY__ = [
+	    __webpack_require__(3)
+	]; (function(_){
 	    // 这里很奇怪
-	    console.log(window.$);
+	    console.log(_);
 	}.apply(null, __WEBPACK_AMD_REQUIRE_ARRAY__));}); 
 
-
 /***/ }
-/******/ ]);
-//# sourceMappingURL=indexMain.js.map
+
+/******/ });
+//# sourceMappingURL=underscoreMain.js.map

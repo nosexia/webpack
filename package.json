@@ -30,9 +30,11 @@
     "webpack-stream": "^3.0.1"
   },
   "dependencies": {
+    "backbone": "^1.3.2",
     "business-oa-common": "git+http://gitlab.futunn.com/webpackage/business-oa-common.git#1.1.0",
     "gulp": "^3.9.0",
     "jquery": "^2.2.2",
-    "tool-declare": "git+http://gitlab.futunn.com/webpackage/tool-declare.git#1.0.0"
+    "tool-declare": "git+http://gitlab.futunn.com/webpackage/tool-declare.git#1.0.0",
+    "underscore": "^1.8.3"
   }
 }
