@@ -1,13 +1,18 @@
 <html>
 <head>
-    <title>引入模块，两种形式</title>
+    <title>webpack什么时候会生成*chuck.js文件</title>
     <meta charset="utf-8"/>  
 <script src="./scripts-build/indexMain.js"></script>    
 </head>
 <body>
-模块可以在package.json中引入</br>
-也可以在webpack.config.js中引入，引入同名模块，配置文件的级别更高。</br>
 
+1.require(['module-a', 'module-b'], function(a, b){
+    // 会生成*chunk.js文件
+})
+
+2.define(['moudle-a', 'module-b'], function(a, b){
+    // 不会生成*chunk.js文件
+})
 
 </body>
 </html>
