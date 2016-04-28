@@ -1,5 +1,6 @@
 /*global module*/
 module.exports = {
+    watch : true,
     output: {
         chunkFilename : '[id].[chunkhash].js',
         publicPath: './scripts-build/'
@@ -20,7 +21,8 @@ module.exports = {
         ] 
     },
     externals:{
-        wx: 'wx'
+        wx: 'wx',
+        jquery: 'jQuery'
     }
     
 };

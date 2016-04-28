@@ -6,6 +6,7 @@ var webpack = require('webpack');
 var extend = require('extend');
 var runSequence = require('run-sequence');
 var devConfig = require('./webpack.config.js');
+var rev = require('gulp-rev-hash');
 // uglifycss 压缩css
 var uglifycss = require('gulp-uglifycss');
 // 用cssimport，引入css文件。
@@ -20,8 +21,8 @@ var pordConfig = extend({}, devConfig, {
 var plumber = require('gulp-plumber');
 
 
-gulp.task('dev', function(){
-    return gulp.src('./scripts/**/*Main.js')
+gulp.task('module', function(){
+    return gulp.src(['./scripts/**/indexMain.js', './scripts/**/index1Main.js'])
     .pipe(named())  
     .pipe(plumber())        
     .pipe(webpackStream(devConfig))    
@@ -43,6 +44,12 @@ gulp.task('prod-css', function(){
     .pipe(gulp.dest('./css-build'));
 });
 
+gulp.task('rev', function(){
+    gulp.src(['../view/**/*.html'])
+    .pipe(rev())
+    .pipe(gulp.dest('../view/'));
+});
+
 
 /*gulp.task('prod', function(){
     return gulp.src('./css/common.css')
@@ -53,8 +60,12 @@ gulp.task('prod-css', function(){
 
 // 当'./scripts/test.js'变化时，执行dev
 
-gulp.task('default', ['dev']);
+gulp.task('default', ['module', 'rev']);
 
 gulp.task('pub', function(){
     runSequence('prod');
+});
+
+gulp.task('dev', function(){
+    runSequence('module');
 });

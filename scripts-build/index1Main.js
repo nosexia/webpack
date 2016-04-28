@@ -27,7 +27,7 @@
 /******/ 	// "0" means "already loaded"
 /******/ 	// Array means "loading", array contains callbacks
 /******/ 	var installedChunks = {
-/******/ 		2:0
+/******/ 		0:0
 /******/ 	};
 /******/
 /******/ 	// The require function
@@ -95,26 +95,24 @@
 /* 0 */
 /***/ function(module, exports, __webpack_require__) {
 
-	module.exports = __webpack_require__(3);
+	module.exports = __webpack_require__(1);
 
 
 /***/ },
-/* 1 */,
-/* 2 */,
-/* 3 */
+/* 1 */
 /***/ function(module, exports, __webpack_require__) {
 
-	__webpack_require__.e/* require */(1/* duplicate */, function(__webpack_require__) { var __WEBPACK_AMD_REQUIRE_ARRAY__ = [
+	__webpack_require__.e/* require */(1, function(__webpack_require__) { var __WEBPACK_AMD_REQUIRE_ARRAY__ = [
 	    __webpack_require__(2)
 	]; (function($){
 	    // 这里很奇怪
 	    console.log(window.$);
 	    var a = 111;
 	    var b = 222;
-	    var c = 1111;
+	    var c = 332223;
 	}.apply(null, __WEBPACK_AMD_REQUIRE_ARRAY__));}); 
 
 
 /***/ }
 /******/ ]);
-//# sourceMappingURL=indexMain.js.map
+//# sourceMappingURL=index1Main.js.map
