@@ -2,21 +2,16 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>externals参数，用来把公共资源放到打包外面</title>
+    <title>对于低版本jQuery来说,只支持amd模式加载</title>
 </head>
 <body>
-1.定义一个jquery组件，执行window.jQuery</br>
-2.类似于module.exports.jquery = widdow.jQuery
-语法:</br>
-module.exports = {</br>
-    externals :{</br>
-        'jquery' : 'jQuery'</br>
-    }</br>
+1.对于低版本jQuery来说,只支持amd模式加载</br>
+module.exports.amd = {</br>
+    $ : true,</br>
+    jQuery : true</br>
 }</br>
-
-
 </body>
 
-<script type="text/javascript" src="./scripts/lib/jquery.js" ></script>
 <script type="text/javascript" src="./scripts-build/indexMain.js"></script>
+
 </html>

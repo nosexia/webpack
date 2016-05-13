@@ -73,7 +73,7 @@
 /******/ 			script.charset = 'utf-8';
 /******/ 			script.async = true;
 /******/
-/******/ 			script.src = __webpack_require__.p + "" + chunkId + "." + {"1":"3296edcf92d615783b4a"}[chunkId] + ".js";
+/******/ 			script.src = __webpack_require__.p + "" + chunkId + "." + {"1":"7a775dd34fb8075ef4cb"}[chunkId] + ".js";
 /******/ 			head.appendChild(script);
 /******/ 		}
 /******/ 	};
@@ -95,23 +95,22 @@
 /* 0 */
 /***/ function(module, exports, __webpack_require__) {
 
-	module.exports = __webpack_require__(3);
+	module.exports = __webpack_require__(4);
 
 
 /***/ },
 /* 1 */,
 /* 2 */,
-/* 3 */
+/* 3 */,
+/* 4 */
 /***/ function(module, exports, __webpack_require__) {
 
 	__webpack_require__.e/* require */(1/* duplicate */, function(__webpack_require__) { var __WEBPACK_AMD_REQUIRE_ARRAY__ = [
 	    __webpack_require__(2)
-	]; (function($){
+	]; (function(jquery){
 	    // 这里很奇怪
-	    console.log(window.$);
-	    var a = 111;
-	    var b = 222;
-	    var c = 1111;
+	
+	    console.log(jquery);
 	}.apply(null, __WEBPACK_AMD_REQUIRE_ARRAY__));}); 
 
 

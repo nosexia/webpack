@@ -1,9 +1,7 @@
 require([
     'jquery'
-],function($){
+],function(jquery){
     // 这里很奇怪
-    console.log(window.$);
-    var a = 111;
-    var b = 222;
-    var c = 1111;
+
+    console.log(jquery);
 }); 
