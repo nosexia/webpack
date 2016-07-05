@@ -20,12 +20,24 @@ var pordConfig = extend({}, devConfig, {
 // 阻止gulp中断，当出现错误的时候
 var plumber = require('gulp-plumber');
 
+// 在src中加入第二个options参数base，
+// options.cwd
 
-gulp.task('module', function(){
-    return gulp.src(['./scripts/**/indexMain.js', './scripts/**/index1Main.js'])
-    .pipe(named())  
+// Type: String Default: process.cwd()
+
+// cwd for the output folder, only has an effect if provided output folder is relative.
+gulp.task('dev', function(){
+    return gulp.src('./scripts/test/*Main.js',{
+        base : './scripts'
+    })
+    .pipe(named(function(file){
+        var path = require('path');
+        var moduleName = path.relative(path.join(file.cwd,file.base),file.history[0]);
+        moduleName = moduleName.replace(/.js$/,'');        
+        return moduleName;
+    }))
     .pipe(plumber())        
-    .pipe(webpackStream(devConfig))    
+    .pipe(webpackStream(devConfig)) 
     .pipe(gulp.dest('./scripts-build'));
 });
 
@@ -58,14 +70,13 @@ gulp.task('rev', function(){
     .pipe(gulp.dest('./css-build'));    
 });*/
 
-// 当'./scripts/test.js'变化时，执行dev
 
-gulp.task('default', ['module', 'rev']);
+gulp.task('default', ['dev', 'rev']);
 
 gulp.task('pub', function(){
     runSequence('prod');
 });
 
 gulp.task('dev', function(){
-    runSequence('module');
+    runSequence('dev');
 });
