@@ -26,6 +26,14 @@ var plumber = require('gulp-plumber');
 // Type: String Default: process.cwd()
 
 // cwd for the output folder, only has an effect if provided output folder is relative.
+// 
+// 在named中传入函数，可以改写返回值，生成的目标文件夹和源文件一致
+//     .pipe(named(function(file){
+//         var path = require('path');
+//         var moduleName = path.relative(path.join(file.cwd,file.base),file.history[0]);
+//         moduleName = moduleName.replace(/.js$/,'');        
+//         return moduleName;
+//     }))
 gulp.task('dev', function(){
     return gulp.src('./scripts/test/*Main.js',{
         base : './scripts'
@@ -77,6 +85,6 @@ gulp.task('pub', function(){
     runSequence('prod');
 });
 
-gulp.task('dev', function(){
-    runSequence('dev');
-});
+// gulp.task('dev', function(){
+//     runSequence('dev');
+// });
